@@ -1,0 +1,22 @@
+{
+  "name": "eth-gas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test",
+    "ganache": "ganache-cli --deterministic",
+    "compile": "truffle compile --all",
+    "migrate": "truffle migrate --reset"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.2.0",
+    "truffle": "^5.1.53"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.9",
+    "ganache-cli": "^6.12.1"
+  }
+}
