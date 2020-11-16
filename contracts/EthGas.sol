@@ -27,8 +27,7 @@ contract GasToken is ERC20, ERC20Burnable {
         require(msg.sender != _recipient, "Sender and Recipient are the same");
         uint _amountToBurn = _amount.mul(3).div(100);
         uint _totalBalance = _amount.sub(_amountToBurn);
-        
-        super._transfer(msg.sender, address(0), _amountToBurn); // transfer the burnt amount to zero address
+
         super._transfer(msg.sender, _recipient, _totalBalance);
         return true;
     }
