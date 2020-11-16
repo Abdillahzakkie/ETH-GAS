@@ -86,8 +86,8 @@ contract GasToken is ERC20, ERC20Burnable {
         return _rewards;
     }
     
-    function claimableRewards() public view returns(uint) {
-        return rewardsEarned[msg.sender];
+    function claimableRewards(address _user) public view returns(uint) {
+        return rewardsEarned[_user];
     }
     
     function getMaxTimestamp(uint[] memory _values) private pure returns(uint) {

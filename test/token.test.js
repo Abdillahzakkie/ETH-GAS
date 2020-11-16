@@ -6,18 +6,22 @@ const { ZERO_ADDRESS } = require( "@openzeppelin/test-helpers/src/constants" );
 
 const toWei = _amount => web3.utils.toWei(_amount.toString(), 'ether');
 
-contract('Token', async ([admin, user1]) => {
+contract('Token', async ([admin, user1, user2]) => {
     let timestamps = [];
     let gasUsed = [];
+    let totalGasUsed = 0;
 
     beforeEach(async () => {
         this.token = await Token.new("GasToken", "GTX", { from: admin });
+        // transfer some token=s to user
+        await this.token.transfer(user1, toWei(200), { from: admin});
 
         // populate the timestamps and gasused array with some dumb data
         for(let i = 1; i <= 5; ++i) {
             const currentTime = Date.now();
             timestamps = [...timestamps, currentTime.toString()];
             gasUsed = [...gasUsed, i.toString()]; 
+            totalGasUsed = totalGasUsed + i;
         }
     });
 
@@ -32,8 +36,14 @@ contract('Token', async ([admin, user1]) => {
     })
 
     describe('Claim rewards', () => {
+        beforeEach(async () => {
+            await this.token.claimRewards(timestamps, gasUsed, { from: user1 });
+        })
+
         it("should claim rewards properly", async () => {
-            await this.token.claimRewards(timestamps, gasUsed);
+            const result = await this.token.claimableRewards(user1);
+            console.log(result)
+            expect(result.toString()).to.equal(totalGasUsed.toString());
         })
     })
 })
