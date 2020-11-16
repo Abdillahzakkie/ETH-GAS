@@ -55,6 +55,15 @@ contract('Token', async ([admin, user1, user2]) => {
             asssert(false);
         })
 
-        
+        it("should withraw token to user account", async () => {
+            const initialBalance = await this.token.balanceOf(user1);
+
+            const _rewards = await this.token.claimableRewards(user1);
+
+            await this.token.withdrawRewards(_rewards.toString(), { from: user1 });
+            const currentBalance = await this.token.balanceOf(user1);
+
+            expect(currentBalance.toString()).to.equal((Number(initialBalance) + Number(20).toString()));
+        })
     })
 })
