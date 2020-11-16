@@ -14,8 +14,8 @@ contract('Token', async ([admin, user1]) => {
         this.token = await Token.new("GasToken", "GTX", { from: admin });
         for(let i = 1; i <= 5; ++i) {
             const currentTime = Date.now();
-            timestamps = [timestamps, currentTime];
-            gasUsed = [...gasUsed, i];
+            timestamps = [timestamps, currentTime.toString()];
+            gasUsed = [...gasUsed, i.toString()];
         }
     });
 
