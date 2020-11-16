@@ -42,8 +42,19 @@ contract('Token', async ([admin, user1, user2]) => {
 
         it("should claim rewards properly", async () => {
             const result = await this.token.claimableRewards(user1);
-            console.log(result)
             expect(result.toString()).to.equal(totalGasUsed.toString());
         })
+
+        it("should reject if the same data is sent twice", async () => {
+            try {
+                await this.token.claimRewards(timestamps, gasUsed, { from: user1 });
+            } catch (error) {
+                assert(error.message.includes("Invalid transactions"));
+                return;
+            }
+            asssert(false);
+        })
+
+        
     })
 })
