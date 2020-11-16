@@ -12,16 +12,13 @@ contract('Token', async ([admin, user1]) => {
 
     beforeEach(async () => {
         this.token = await Token.new("GasToken", "GTX", { from: admin });
+
+        // populate the timestamps and gasused array with some dumb data
         for(let i = 1; i <= 5; ++i) {
             const currentTime = Date.now();
             timestamps = [...timestamps, currentTime.toString()];
-            gasUsed = [...gasUsed, i.toString()];
-
-            
+            gasUsed = [...gasUsed, i.toString()]; 
         }
-
-        console.log('timestamps', timestamps)
-        console.log('gasUsed', gasUsed)
     });
 
     it('should set token details properly', async () => {
