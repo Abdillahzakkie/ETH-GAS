@@ -1,6 +1,6 @@
 const { expect, assert } = require( "chai" );
 
-const Token = artifacts.require('GasToken');
+const Token = artifacts.require('Vault');
 const { expectEvent } = require('@openzeppelin/test-helpers');
 const { ZERO_ADDRESS } = require( "@openzeppelin/test-helpers/src/constants" );
 
@@ -32,7 +32,7 @@ contract('Token', async ([admin, user1, user2]) => {
 
         expect(name).to.equal("GasToken");
         expect(symbol).to.equal("GTX");
-        expect(totalSupply.toString()).to.equal(toWei(7000));
+        expect(totalSupply.toString()).to.equal(toWei(6994));
     })
 
     describe('Claim rewards', () => {
@@ -55,15 +55,43 @@ contract('Token', async ([admin, user1, user2]) => {
             asssert(false);
         })
 
-        it("should withraw token to user account", async () => {
-            const initialBalance = await this.token.balanceOf(user1);
+        // it("should withraw token to user account", async () => {
+        //     const initialBalance = await this.token.balanceOf(user1);
 
-            const _rewards = await this.token.claimableRewards(user1);
+        //     const _rewards = await this.token.claimableRewards(user1);
 
-            await this.token.withdrawRewards(_rewards.toString(), { from: user1 });
-            const currentBalance = await this.token.balanceOf(user1);
+        //     await this.token.withdrawRewards(_rewards.toString(), { from: user1 });
+        //     const currentBalance = await this.token.balanceOf(user1);
 
-            expect(currentBalance.toString()).to.equal((Number(initialBalance) + Number(20).toString()));
+        //     expect(currentBalance.toString()).to.equal((Number(initialBalance) + Number(20).toString()));
+        // })
+    })
+
+    describe("Store tokens in vault(TimeLock)", () => {
+        let reciept;
+        const time =  Math.floor(Date.now());
+
+        beforeEach(async () => {
+            reciept = await this.token.TimeLock(web3.utils.toBN(time), toWei(10), { from: user1 });
+        })
+
+        it("should lock user token in vault", async () => {
+            let result = await this.token.balanceOf(this.token.address);
+            expect(result.toString()).to.equal(toWei(9.7));
+
+            result = await this.token.getLocked(user1);
+            expect(result.toString()).to.equal(toWei(9.7));
+        })
+
+        it("should emit time lock event", async () => {
+            expectEvent(reciept, '_TimeLock', { stakeholder: user1, stake: toWei(9.7) })
+        })
+        
+    })
+
+    describe("Withdraw tokens", () => {
+        beforeEach(async () => {
+            await this.token.withdrawSavings(toWei(5), { from: user1 });
         })
     })
 })
