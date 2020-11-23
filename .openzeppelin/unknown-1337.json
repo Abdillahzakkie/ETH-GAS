@@ -1,181 +1,6 @@
 {
   "manifestVersion": "3.1",
   "impls": {
-    "ab5392e66e754871bebe1248050ea12c8dc2f1a539d39ebe75cc5b88c2194f5d": {
-      "address": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
-      "txHash": "0x8abde7d7bf03e86609da4ff3a42197465b008542fb4188b18474b92b527a6fc6",
-      "layout": {
-        "storage": [
-          {
-            "contract": "Initializable",
-            "label": "initialized",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
-          },
-          {
-            "contract": "Initializable",
-            "label": "initializing",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
-          },
-          {
-            "contract": "Initializable",
-            "label": "______gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
-          },
-          {
-            "contract": "ContextUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts/GSN/Context.sol:25"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_balances",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_allowances",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_totalSupply",
-            "type": "t_uint256",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_name",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_symbol",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_decimals",
-            "type": "t_uint8",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)44_storage",
-            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
-          },
-          {
-            "contract": "ERC20BurnableUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20Burnable.sol:50"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "_owner",
-            "type": "t_address",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)49_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
-          },
-          {
-            "contract": "GasToken",
-            "label": "totalMinted",
-            "type": "t_uint256",
-            "src": "EthGas.sol:11"
-          },
-          {
-            "contract": "GasToken",
-            "label": "_deployedTime",
-            "type": "t_uint256",
-            "src": "EthGas.sol:12"
-          },
-          {
-            "contract": "GasToken",
-            "label": "totalBurnt",
-            "type": "t_uint256",
-            "src": "EthGas.sol:13"
-          },
-          {
-            "contract": "GasToken",
-            "label": "admin",
-            "type": "t_address",
-            "src": "EthGas.sol:14"
-          },
-          {
-            "contract": "Vault",
-            "label": "rewardPool",
-            "type": "t_uint256",
-            "src": "Vault.sol:10"
-          },
-          {
-            "contract": "Vault",
-            "label": "rewardsEarned",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "Vault.sol:12"
-          },
-          {
-            "contract": "Vault",
-            "label": "time",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "Vault.sol:13"
-          },
-          {
-            "contract": "Vault",
-            "label": "_savings",
-            "type": "t_mapping(t_address,t_struct(Savings)187_storage)",
-            "src": "Vault.sol:14"
-          }
-        ],
-        "types": {
-          "t_uint256": {
-            "label": "uint256"
-          },
-          "t_mapping(t_address,t_uint256)": {
-            "label": "mapping(address => uint256)"
-          },
-          "t_mapping(t_address,t_struct(Savings)187_storage)": {
-            "label": "mapping(address => struct Vault.Savings)"
-          },
-          "t_address": {
-            "label": "address"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]"
-          },
-          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
-            "label": "mapping(address => mapping(address => uint256))"
-          },
-          "t_string_storage": {
-            "label": "string"
-          },
-          "t_uint8": {
-            "label": "uint8"
-          },
-          "t_array(t_uint256)44_storage": {
-            "label": "uint256[44]"
-          },
-          "t_bool": {
-            "label": "bool"
-          }
-        }
-      }
-    },
     "d8ae86290587ceb8d5efe8eda855395636e2a5049c59b594a15b1de3fd488090": {
       "address": "0x9b1f7F645351AF3631a656421eD2e40f2802E6c0",
       "txHash": "0x6e92a39cf45b34b40ee797eaf85631c0040550859c008fec02e2889591652b61",
@@ -274,118 +99,6 @@
             "label": "mapping(address => uint256)"
           },
           "t_mapping(t_address,t_struct(Savings)116_storage)": {
-            "label": "mapping(address => struct EthanolVault.Savings)"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]"
-          },
-          "t_bool": {
-            "label": "bool"
-          }
-        }
-      }
-    },
-    "5d6f8bd67d5a409ca3911c94d49ce105f9288006567633199f8dd49da6d6c5f0": {
-      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
-      "txHash": "0x33dad131f9baac723c4772ffc7f5e8e48d7884be90abfa03ed0259503dcb1379",
-      "layout": {
-        "storage": [
-          {
-            "contract": "Initializable",
-            "label": "initialized",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
-          },
-          {
-            "contract": "Initializable",
-            "label": "initializing",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
-          },
-          {
-            "contract": "Initializable",
-            "label": "______gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
-          },
-          {
-            "contract": "ContextUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:37"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "_owner",
-            "type": "t_address",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)49_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "EthanolAddress",
-            "type": "t_contract(IERC20)2023",
-            "src": "V1/EthanolVault.sol:10"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "rewardPool",
-            "type": "t_uint256",
-            "src": "V1/EthanolVault.sol:11"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "_deployedTime",
-            "type": "t_uint256",
-            "src": "V1/EthanolVault.sol:12"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "wallet",
-            "type": "t_address",
-            "src": "V1/EthanolVault.sol:13"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "rewardsEarned",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "V1/EthanolVault.sol:15"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "time",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "V1/EthanolVault.sol:16"
-          },
-          {
-            "contract": "EthanolVault",
-            "label": "_savings",
-            "type": "t_mapping(t_address,t_struct(Savings)71_storage)",
-            "src": "V1/EthanolVault.sol:17"
-          }
-        ],
-        "types": {
-          "t_contract(IERC20)2023": {
-            "label": "contract IERC20"
-          },
-          "t_uint256": {
-            "label": "uint256"
-          },
-          "t_address": {
-            "label": "address"
-          },
-          "t_mapping(t_address,t_uint256)": {
-            "label": "mapping(address => uint256)"
-          },
-          "t_mapping(t_address,t_struct(Savings)71_storage)": {
             "label": "mapping(address => struct EthanolVault.Savings)"
           },
           "t_array(t_uint256)49_storage": {
@@ -740,6 +453,381 @@
             "label": "mapping(address => uint256)"
           },
           "t_mapping(t_address,t_struct(Savings)71_storage)": {
+            "label": "mapping(address => struct EthanolVault.Savings)"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "50697885c8097be2e1a920b990eee373aa0c168d71f4e16cbbd9a52f7bad5ee3": {
+      "address": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+      "txHash": "0xe960e1fac04c02a92c197b58f66843449883205a2fa40011601d2c817a162fd0",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\GSN\\Context.sol:37"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:78"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "wallet",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:11"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:12"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "totalBurnt",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:13"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:14"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:15"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:16"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:19"
+          },
+          {
+            "contract": "Ethanol",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\Ethanol.sol:20"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "80b1b24d90158887b9e5f5d77f3b1d0f26c58a9b2ca6790b0a3018ed173ba596": {
+      "address": "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb",
+      "txHash": "0xde9fffb8d53baf1f345caa995339ffcd847f11cf3517ee6fb6d6890ece294f27",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\GSN\\Context.sol:37"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:78"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "EthanolAddress",
+            "type": "t_contract(IERC20)2029",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:10"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "admin",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:11"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardPool",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:12"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "_deployedTime",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:13"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "totalSharedRewards",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:14"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardsEarned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:18"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "time",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:19"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "_savings",
+            "type": "t_mapping(t_address,t_struct(Savings)645_storage)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:20"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "userTransactionCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:21"
+          }
+        ],
+        "types": {
+          "t_contract(IERC20)2029": {
+            "label": "contract IERC20"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_struct(Savings)645_storage)": {
+            "label": "mapping(address => struct EthanolVault.Savings)"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "4e43e8c7bdc4371c8cea695c5c02b0e91e3b3062d60886146ca081e67fb7cc30": {
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "txHash": "0x92c650702cea92d95280e8173e05935136dc0bed468fa9aa4e8e5bbaa7c2baea",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\GSN\\Context.sol:37"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:78"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "EthanolAddress",
+            "type": "t_contract(IERC20)2029",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:10"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "admin",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:11"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardPool",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:12"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "_deployedTime",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:13"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "totalSharedRewards",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:14"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardsEarned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:18"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "time",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:19"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "_savings",
+            "type": "t_mapping(t_address,t_struct(Savings)645_storage)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:20"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "userTransactionCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:21"
+          },
+          {
+            "contract": "EthanolVaultUpgraded",
+            "label": "wallet",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVaultUpgrade.sol:7"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_contract(IERC20)2029": {
+            "label": "contract IERC20"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_struct(Savings)645_storage)": {
             "label": "mapping(address => struct EthanolVault.Savings)"
           },
           "t_array(t_uint256)49_storage": {
