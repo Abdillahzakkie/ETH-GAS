@@ -9,7 +9,7 @@ import "@openzeppelin/contracts-ethereum-package/contracts/access/AccessControl.
 contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
     using SafeMath for uint;
     IERC20 public EthanolAddress;
-    address public admin;
+    address public wallet;
     uint public rewardPool;
     uint private _deployedTime;  
 
@@ -18,6 +18,14 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
     mapping(address => uint) private rewardsEarned;
     mapping(address => uint) private time;
     mapping(address => Savings) private _savings;
+    mapping(address => Transactions) public transactions;
+    mapping(address => uint) public userTransactionCount; 
+
+    struct Transactions {
+        uint id;
+        uint timestamp;
+        uint rewards;
+    }
 
     struct Savings {
         address user;
@@ -38,13 +46,19 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
         uint indexed timestamp
     );
 
+    event _RewardShared(
+        uint indexed id,
+        uint indexed timestamp,
+        uint indexed rewards
+    );
+
     function initialize(IERC20 _EthanolAddress) public initializer {
         // Grant the contract deployer the default admin role: it will be able
         // to grant and revoke any roles
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
 
         EthanolAddress = _EthanolAddress;
-        admin = _msgSender();
+        wallet = _msgSender();
         _deployedTime = block.timestamp;
     }
 
@@ -65,19 +79,27 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
         public 
     {
         require(hasRole(VALIDATOR_ROLE, _msgSender()), "Caller is not a validator");
-
         require(_timestamps[0] > time[_account], "Invalid transactions");
+
         uint _total = 0;
+        uint _time = block.timestamp;
 
         for(uint i = 0; i < _timestamps.length; i++) {
             if(_timestamps[i] > _deployedTime && _timestamps[i] > time[_account]) {
                 _total = _total.add(calculateRewards(_gasUsed[i]));
             }
         }
-       
-        time[_account] = _timestamps[getMaxTimestamp(_timestamps)];
+        // update the transaction counts for the current user
+        userTransactionCount[_msgSender()] = userTransactionCount[_msgSender()].add(1);
         rewardsEarned[_account] = _total;
-        return true;
+        time[_account] = _timestamps[getMaxTimestamp(_timestamps)];
+
+        transactions[msg.sender] = Transactions(
+            userTransactionCount[_msgSender()],
+            _time,
+            rewardsEarned[_account]
+        );
+        emit _RewardShared(userTransactionCount[_msgSender()], _time,_total);
     }
 
     function seedRewardPool(uint _amount) public onlyOwner {
@@ -183,7 +205,7 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
         uint _taxedAmount = _amount.mul(4).div(100);
         uint _balance = _amount.sub(_taxedAmount);
 
-        EthanolAddress.transferFrom(_msgSender(), admin, _taxedAmount);
+        EthanolAddress.transferFrom(_msgSender(), wallet, _taxedAmount);
         EthanolAddress.transferFrom(_msgSender(), address(this), _balance);
         
         _savings[_msgSender()] = Savings(
@@ -202,7 +224,10 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
         uint _amount = _savings[_msgSender()].amount;
         _savings[_msgSender()].amount = 0;
 
-        if((_savings[_msgSender()].endTime.min(_savings[_msgSender()].startTime)) >= 365 days) {
+        uint _range = (_savings[_msgSender()].endTime).sub(_savings[_msgSender()].startTime);
+
+        if(_range >= 365 days) {
+            // 1 Year is approximated as 365 days
             // 500% rewards for yearly save
             uint _rewards = rewardPool.mul(500).div(100);
             _amount = _amount.add(_rewards);
