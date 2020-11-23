@@ -13,8 +13,6 @@ contract EthanolVault is OwnableUpgradeSafe {
     uint private _deployedTime;  
     uint public totalSharedRewards;
 
-    bytes32 public constant VALIDATOR_ROLE = keccak256("VALIDATOR_ROLE");
-
     mapping(address => uint) private rewardsEarned;
     mapping(address => uint) private time;
     mapping(address => Savings) private _savings;

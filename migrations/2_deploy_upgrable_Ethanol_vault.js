@@ -1,8 +1,7 @@
-const { deployProxy, upgradeProxy } = require('@openzeppelin/truffle-upgrades');
+const { deployProxy } = require('@openzeppelin/truffle-upgrades');
 
 const Ethanol = artifacts.require('Ethanol');
 const EthanolVault = artifacts.require('EthanolVault');
-const EthanolVaultUpgraded  = artifacts.require('EthanolVaultUpgraded');
 
 
 module.exports = async (deployer, network, [admin]) => {
@@ -19,13 +18,4 @@ module.exports = async (deployer, network, [admin]) => {
     unsafeAllowCustomTypes: true
   });
   console.log(`Instance addres: ${instance.address}`)
-  
-  const upgraded = await upgradeProxy(instance.address, EthanolVaultUpgraded, {
-    deployer,
-    initializer: 'initialize',
-    unsafeAllowCustomTypes: true
-  });
-
-  console.log(`Upgraded addres: ${upgraded.address}`)
-
 }
