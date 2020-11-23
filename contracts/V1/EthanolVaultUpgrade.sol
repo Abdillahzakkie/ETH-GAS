@@ -4,9 +4,9 @@ pragma solidity >=0.4.22 <0.8.0;
 import "./EthanolVault.sol";
 
 contract EthanolVaultUpgraded is EthanolVault {
-    address private admin;
+    address public wallet;
 
     function initialize() public initializer {
-        admin = msg.sender;
+        wallet = msg.sender;
     }
 }

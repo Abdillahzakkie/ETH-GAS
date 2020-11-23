@@ -9,23 +9,17 @@ import "@openzeppelin/contracts-ethereum-package/contracts/access/AccessControl.
 contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
     using SafeMath for uint;
     IERC20 public EthanolAddress;
-    address public wallet;
+    address public admin;
     uint public rewardPool;
     uint private _deployedTime;  
+    uint public totalSharedRewards;
 
     bytes32 public constant VALIDATOR_ROLE = keccak256("VALIDATOR_ROLE");
 
     mapping(address => uint) private rewardsEarned;
     mapping(address => uint) private time;
     mapping(address => Savings) private _savings;
-    mapping(address => Transactions) public transactions;
     mapping(address => uint) public userTransactionCount; 
-
-    struct Transactions {
-        uint id;
-        uint timestamp;
-        uint rewards;
-    }
 
     struct Savings {
         address user;
@@ -53,22 +47,9 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
     );
 
     function initialize(IERC20 _EthanolAddress) public initializer {
-        // Grant the contract deployer the default admin role: it will be able
-        // to grant and revoke any roles
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-
         EthanolAddress = _EthanolAddress;
-        wallet = _msgSender();
+        admin = _msgSender();
         _deployedTime = block.timestamp;
-    }
-
-    /* Controlled access */
-    function revokeRole(bytes32 _role, address _account) public override onlyOwner {
-        require(
-            _role != DEFAULT_ADMIN_ROLE,
-            "ModifiedAccessControl: cannot revoke default admin role"
-        );
-        super.revokeRole(_role, _account);
     }
 
     function ShareReward(
@@ -78,7 +59,7 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
     ) 
         public 
     {
-        require(hasRole(VALIDATOR_ROLE, _msgSender()), "Caller is not a validator");
+        require(_msgSender() == admin, "Caller is not a validator");
         require(_timestamps[0] > time[_account], "Invalid transactions");
 
         uint _total = 0;
@@ -90,15 +71,14 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
             }
         }
         // update the transaction counts for the current user
-        userTransactionCount[_msgSender()] = userTransactionCount[_msgSender()].add(1);
-        rewardsEarned[_account] = _total;
-        time[_account] = _timestamps[getMaxTimestamp(_timestamps)];
-
-        transactions[msg.sender] = Transactions(
-            userTransactionCount[_msgSender()],
-            _time,
-            rewardsEarned[_account]
+        userTransactionCount[_msgSender()] = userTransactionCount[_msgSender()].add(
+            _timestamps[_timestamps.length - 1]
         );
+
+        rewardsEarned[_account] = _total;
+        totalSharedRewards = totalSharedRewards.add(rewardsEarned[_account]);
+        
+        time[_account] = _timestamps[getMaxTimestamp(_timestamps)];
         emit _RewardShared(userTransactionCount[_msgSender()], _time,_total);
     }
 
@@ -205,7 +185,7 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
         uint _taxedAmount = _amount.mul(4).div(100);
         uint _balance = _amount.sub(_taxedAmount);
 
-        EthanolAddress.transferFrom(_msgSender(), wallet, _taxedAmount);
+        EthanolAddress.transferFrom(_msgSender(), admin, _taxedAmount);
         EthanolAddress.transferFrom(_msgSender(), address(this), _balance);
         
         _savings[_msgSender()] = Savings(
