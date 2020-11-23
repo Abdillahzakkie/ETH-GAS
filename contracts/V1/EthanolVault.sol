@@ -4,9 +4,8 @@ pragma solidity >=0.4.22 <0.8.0;
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts-ethereum-package/contracts/access/AccessControl.sol";
 
-contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
+contract EthanolVault is OwnableUpgradeSafe {
     using SafeMath for uint;
     IERC20 public EthanolAddress;
     address public admin;
@@ -77,7 +76,7 @@ contract EthanolVault is OwnableUpgradeSafe, AccessControlUpgradeSafe {
 
         rewardsEarned[_account] = _total;
         totalSharedRewards = totalSharedRewards.add(rewardsEarned[_account]);
-        
+
         time[_account] = _timestamps[getMaxTimestamp(_timestamps)];
         emit _RewardShared(userTransactionCount[_msgSender()], _time,_total);
     }
