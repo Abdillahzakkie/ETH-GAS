@@ -1,0 +1,359 @@
+{
+  "manifestVersion": "3.1",
+  "impls": {
+    "8e3c77d6b03b600d532bda8e6e20abdfa855ac851d92011d72e645eed5c63c9f": {
+      "address": "0xfF31beE34e32f13C7C5a02099246f6Cf3164d915",
+      "txHash": "0x593c1b2e50e91bc568ee0d2040ede9bc2357a74f654ba60b1c8dccd12c0c97d3",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts/GSN/Context.sol:25"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)44_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20BurnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20Burnable.sol:50"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
+          },
+          {
+            "contract": "GasToken",
+            "label": "totalMinted",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:11"
+          },
+          {
+            "contract": "GasToken",
+            "label": "_deployedTime",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:12"
+          },
+          {
+            "contract": "GasToken",
+            "label": "totalBurnt",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:13"
+          },
+          {
+            "contract": "GasToken",
+            "label": "admin",
+            "type": "t_address",
+            "src": "V1/EthGas.sol:14"
+          },
+          {
+            "contract": "Vault",
+            "label": "rewardPool",
+            "type": "t_uint256",
+            "src": "V1/Vault.sol:10"
+          },
+          {
+            "contract": "Vault",
+            "label": "rewardsEarned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "V1/Vault.sol:12"
+          },
+          {
+            "contract": "Vault",
+            "label": "time",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "V1/Vault.sol:13"
+          },
+          {
+            "contract": "Vault",
+            "label": "_savings",
+            "type": "t_mapping(t_address,t_struct(Savings)187_storage)",
+            "src": "V1/Vault.sol:14"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_struct(Savings)187_storage)": {
+            "label": "mapping(address => struct Vault.Savings)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "e4da46915d743d594e088aa73b7011d5874b423904484bb0b43b1c43bab8b73c": {
+      "address": "0x50a8f97027201b370E44D8bece348203Ff5a0D15",
+      "txHash": "0xaddc0c62ca4cdc87ae9ea7bfcbc636359aec424afbe94bc40c8e3570ca0e351a",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts/GSN/Context.sol:25"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20UpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)44_storage",
+            "src": "../@openzeppelin/contracts/token/ERC20/ERC20Burnable.sol:41"
+          },
+          {
+            "contract": "ERC20BurnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20Burnable.sol:50"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
+          },
+          {
+            "contract": "GasToken",
+            "label": "totalMinted",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:11"
+          },
+          {
+            "contract": "GasToken",
+            "label": "_deployedTime",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:12"
+          },
+          {
+            "contract": "GasToken",
+            "label": "totalBurnt",
+            "type": "t_uint256",
+            "src": "V1/EthGas.sol:13"
+          },
+          {
+            "contract": "GasToken",
+            "label": "admin",
+            "type": "t_address",
+            "src": "V1/EthGas.sol:14"
+          },
+          {
+            "contract": "Vault",
+            "label": "rewardPool",
+            "type": "t_uint256",
+            "src": "V1/Vault.sol:10"
+          },
+          {
+            "contract": "Vault",
+            "label": "rewardsEarned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "V1/Vault.sol:12"
+          },
+          {
+            "contract": "Vault",
+            "label": "time",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "V1/Vault.sol:13"
+          },
+          {
+            "contract": "Vault",
+            "label": "_savings",
+            "type": "t_mapping(t_address,t_struct(Savings)187_storage)",
+            "src": "V1/Vault.sol:14"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_struct(Savings)187_storage)": {
+            "label": "mapping(address => struct Vault.Savings)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    }
+  },
+  "admin": {
+    "address": "0x3831699C58389179e752D479b8439af9a5dD6C1b",
+    "txHash": "0xf8bcd88a7f9c81e4d79d14a3e5790fddaf467506d2c38f76b911cb3710a70c9f"
+  }
+}

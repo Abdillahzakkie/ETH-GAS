@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "truffle test",
+    "test": "truffle test --network development",
     "ganache": "ganache-cli --deterministic",
     "compile": "truffle compile --all",
-    "migrate": "truffle migrate --reset"
+    "migrate": "truffle migrate --reset --network kovan"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.9",
     "@openzeppelin/truffle-upgrades": "^1.2.5",
+    "@truffle/hdwallet-provider": "^1.2.0",
     "ganache-cli": "^6.12.1"
   }
 }
