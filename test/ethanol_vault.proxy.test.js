@@ -1,16 +1,15 @@
 const { deployProxy } = require('@openzeppelin/truffle-upgrades');
  
 // Load compiled artifacts
-const EthanolVaultUpgraded = artifacts.require('EthanolVaultUpgraded');
+const Ethanol = artifacts.require('Ethanol');
  
 // Start test block
 contract('EthanolVaultUpgrade (proxy)', ([admin]) => {
   beforeEach(async () => {
 
     this.contract = await deployProxy(
-      EthanolVaultUpgraded, 
-      [admin], 
-      { 
+      Ethanol, 
+      [admin], { 
         initializer: 'initialize',
         unsafeAllowCustomTypes: true 
       }
