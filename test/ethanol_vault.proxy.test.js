@@ -1,4 +1,4 @@
-const { deployProxy, upgradeProxy } = require('@openzeppelin/truffle-upgrades');
+const { deployProxy, upgradeProxy, admin } = require('@openzeppelin/truffle-upgrades');
 const { expect } = require('chai');
 // Load compiled artifacts
 const Ethanol = artifacts.require('Ethanol');
@@ -19,7 +19,7 @@ contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
 
     this.contract = await deployProxy(
       EthanolVaultUpgraded, 
-      [], { 
+      [admin], { 
         initializer: 'initialize',
         unsafeAllowCustomTypes: true 
       }
