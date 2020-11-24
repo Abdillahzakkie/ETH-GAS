@@ -1,5 +1,5 @@
 const { deployProxy, upgradeProxy } = require('@openzeppelin/truffle-upgrades');
-const { expect } = require('chai')
+const { expect } = require('chai');
 // Load compiled artifacts
 const Ethanol = artifacts.require('Ethanol');
 const EthanolVault = artifacts.require('EthanolVault');
@@ -9,15 +9,16 @@ const EthanolVaultUpgraded = artifacts.require('EthanolVaultUpgraded');
 // Start test block
 contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
   beforeEach(async () => {
-    this.contract = await deployProxy(
-      EthanolVaultUpgraded, 
-      [], { 
+    this.existing = await deployProxy(
+      EthanolVault, 
+      [wallet], { 
         initializer: 'initialize',
         unsafeAllowCustomTypes: true 
       }
     )
 
-    this.contract = await deployProxy(
+    this.contract = await upgradeProxy(
+      this.existing.address,
       EthanolVaultUpgraded, 
       [], { 
         initializer: 'initialize',
@@ -32,6 +33,7 @@ contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
 
   it('should  retrieve the address of the admin', async () => {
     const _admin = await this.contract.wallet();
-    assert.equal(_admin, deployer)
+    expect(_admin).to.equal(deployer)
   })
+
 });
