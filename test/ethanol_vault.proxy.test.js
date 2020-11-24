@@ -19,7 +19,7 @@ contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
 
     this.contract = await deployProxy(
       EthanolVaultUpgraded, 
-      [admin], { 
+      [wallet], { 
         initializer: 'initialize',
         unsafeAllowCustomTypes: true 
       }
