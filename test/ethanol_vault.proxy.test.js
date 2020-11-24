@@ -34,11 +34,4 @@ contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
     const _admin = await this.contract.wallet();
     assert.equal(_admin, deployer)
   })
-
-  it("author name", async () => {
-    console.log(await this.contract.author())
-    expect(
-      await this.contract.author()
-    ).to.equal("Abdullah")
-  })
 });
