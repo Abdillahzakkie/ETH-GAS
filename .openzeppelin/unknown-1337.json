@@ -1675,6 +1675,58 @@
           }
         }
       }
+    },
+    "3de32b519e37844cd511c39453033d2c05d7873e31672c3f016d25b78d9c4fdc": {
+      "address": "0x84b085c0d4B4D6fbf6490f8246Bc5cD317d2d4cD",
+      "txHash": "0x70228bdff6589e64bd67b4366caaaca5fe455031b01187c2d2c9d5ab022096ac",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:61"
+          },
+          {
+            "contract": "EthanolVaultUpgraded",
+            "label": "wallet",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVaultUpgrade.sol:7"
+          },
+          {
+            "contract": "EthanolVaultUpgraded",
+            "label": "author",
+            "type": "t_string_storage",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVaultUpgrade.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
     }
   },
   "admin": {

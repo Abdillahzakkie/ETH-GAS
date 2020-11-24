@@ -17,8 +17,7 @@ contract('EthanolVaultUpgrade (proxy)', ([deployer, wallet]) => {
       }
     )
 
-    this.contract = await upgradeProxy(
-      this.existing.address,
+    this.contract = await deployProxy(
       EthanolVaultUpgraded, 
       [], { 
         initializer: 'initialize',
