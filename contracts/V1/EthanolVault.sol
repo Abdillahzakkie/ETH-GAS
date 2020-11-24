@@ -11,7 +11,6 @@ contract EthanolVault is OwnableUpgradeSafe {
     address public admin;
     uint public rewardPool;
     uint public totalSharedRewards;
-    string public author;
 
     mapping(address => uint) private rewardsEarned;
     mapping(address => Savings) private _savings;
@@ -43,7 +42,6 @@ contract EthanolVault is OwnableUpgradeSafe {
     function initialize(IERC20 _EthanolAddress) public initializer {
         EthanolAddress = _EthanolAddress;
         admin = _msgSender();
-        author = "Abdullah";
     }
 
     function shareReward(address[] memory _accounts, uint[] memory _rewards) public {

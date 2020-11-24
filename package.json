@@ -7,10 +7,10 @@
     "test": "truffle test --network development",
     "ganache": "ganache-cli --deterministic",
     "compile": "truffle compile --all",
-    "migrate": "truffle migrate --reset --network kovan"
+    "migrate": "truffle migrate --network live"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Abdullah Zakariyya  zakariyyaopeyemi@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts-ethereum-package": "^3.0.0",
     "@openzeppelin/upgrades": "^2.8.0",

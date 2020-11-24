@@ -1727,6 +1727,112 @@
           }
         }
       }
+    },
+    "41fd3d18477fc97efb21999a42edce52adfe3c47ff0901b0c6038a809ad2b3e0": {
+      "address": "0xFd8643CeE37DaE121Ca0E84FD2Ceeb49E828B493",
+      "txHash": "0xd198100f175f40a82597f1aa91da660fee23eaf921913396e70a71b878593f7c",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:21"
+          },
+          {
+            "contract": "Initializable",
+            "label": "initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:26"
+          },
+          {
+            "contract": "Initializable",
+            "label": "______gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\Initializable.sol:61"
+          },
+          {
+            "contract": "ContextUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\GSN\\Context.sol:37"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:18"
+          },
+          {
+            "contract": "OwnableUpgradeSafe",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-ethereum-package\\contracts\\access\\Ownable.sol:78"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "EthanolAddress",
+            "type": "t_contract(IERC20)1640",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:10"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "admin",
+            "type": "t_address",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:11"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardPool",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:12"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "totalSharedRewards",
+            "type": "t_uint256",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:13"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "rewardsEarned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:15"
+          },
+          {
+            "contract": "EthanolVault",
+            "label": "_savings",
+            "type": "t_mapping(t_address,t_struct(Savings)630_storage)",
+            "src": "..\\..\\..\\..\\..\\..\\C\\Users\\DragonLord\\Desktop\\dApp\\ETH-GAS\\contracts\\V1\\EthanolVault.sol:16"
+          }
+        ],
+        "types": {
+          "t_contract(IERC20)1640": {
+            "label": "contract IERC20"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_struct(Savings)630_storage)": {
+            "label": "mapping(address => struct EthanolVault.Savings)"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
     }
   },
   "admin": {
